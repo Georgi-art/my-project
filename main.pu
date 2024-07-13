@@ -1,0 +1,91 @@
+import random
+import time
+
+meme_dict = {
+            "КРИНЖ": "Что-то очень странное или стыдное",
+            "ЛОЛ": "Что-то очень смешное",
+            'РОФЛ': 'шутка',
+            "ЩИЩ": 'одобрение или восторг',
+            "КРИПОВЫЙ": 'страшный,пугающий',
+            "АГРИТЬСЯ": 'злиться',
+            "
+            }
+
+
+
+
+name = input('Как вас зовут?')
+print('Приветствую вас',name)
+time.sleep(1)
+print('это словарь для перевода с языка молодежи')
+time.sleep(1)
+print('в этом словаре есть разные функции')
+print('выберете функцию')
+time.sleep(2)
+while True:
+    print('1. переводчик с языка молодежи')
+    print('2. удалить слово')
+    print('3. добавить слово и его значение')
+    command = input('какую функцию выберете?')
+    if command == '1':
+        while True:
+            word = input('введите непонятное слово (Большими буквами)')
+            if word in meme_dict.keys():
+                print(meme_dict[word])
+                answer = input('есть ли еще непонятное слово?')
+                if answer == 'да':
+                    print('тогда продолжим')
+                else :
+                    print('тогда выбирайте следующюю функцию')
+                    break
+            else:
+                print('такого слова еще нет в переводчике')
+    if command == '2':
+        while True:
+            print('вводите слова с БОЛЬШИХ букв')
+            time.sleep(1)
+            print('вот список')
+            time.sleep(1)
+            print(meme_dict)
+            word1 = input('какое слово хотите удалить? ')
+            del meme_dict[word1]
+            print('слово удалено')
+            print(meme_dict)
+            answer = input('удалим еще слово?')
+            if answer == 'да':
+                print('тогда повторим')
+            else :
+                print('тогда выберите другую функцию ')
+                break
+                
+                
+                
+    if command == '3':
+        while True:
+            print('эта функция для того, если вам сказали слово и обьяснили его значение ')
+            print('для начала посмотрите список, вдруг такое слово уже есть')
+            print(meme_dict)
+            answer = input('добавляем слово?')
+            if answer == 'да':
+                word3 = input('введите слово с БОЛЬШИХ букв')
+                meaning = input('введите значение')
+                meme_dict.update({word3:meaning})
+                print('добавлено')
+                print(meme_dict)
+                answeer = input('добавим еще?')
+                if answeer == 'да':
+                    print('тогда повторим')
+                else:
+                    print('выберите другую функцию')
+                    break
+            else:
+                print('тогда выберете другую функцию')
+                break
+                
+                
+            
+            
+            
+            
+            
+            
